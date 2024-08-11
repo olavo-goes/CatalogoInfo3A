@@ -5,14 +5,20 @@ import { useState } from "react";
 
 export default function Home() {
   const [listaProdutos, setProdutos] = useState([
-    { id: 1, nome: 'Produto A', preco: 'R$ 10,00' },
-    { id: 2, nome: 'Produto B', preco: 'R$ 20,00' },
-    { id: 3, nome: 'Produto C', preco: 'R$ 30,00' }
+    {id: 1, produto: 'batata', preco: '10 R$' },
+    {id: 2, produto: 'banana', preco: '12 R$' },
+    {id: 3, produto: 'beterraba', preco: '8.50 R$' },
+    {id: 4, produto: 'melancia', preco: '19,50 R$' }
   ]);
 
   return (
     <div>
-         <h1>Livros de Programação</h1>
+         <h1>Produtos Loja:</h1>
+         {listaProdutos.map((produto) => 
+          <div key={produto.id}>
+          <h2>{nome}</h2>
+          <h3>preco</h3>
+          </div>)}
     </div>
    
   );
