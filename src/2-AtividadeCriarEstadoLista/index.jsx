@@ -5,10 +5,10 @@ import { useState } from "react"
 
 export default function home (){
     const [listaProdutos, setlistaProdutos] = useState ([
-        {id: 1, produto: 'batata', preco: '10 R$' },
-        {id: 2, produto: 'banana', preco: '12 R$' },
-        {id: 3, produto: 'beterraba', preco: '8.50 R$' },
-        {id: 4, produto: 'melancia', preco: '19,50 R$' }
+        {id: 1, produto: "batata", preco: "10 R$" },
+        {id: 2, produto: "banana", preco: "12 R$" },
+        {id: 3, produto: "beterraba", preco: "8.50 R$" },
+        {id: 4, produto: "melancia", preco: "19,50 R$" }
     ])
 
     return (
