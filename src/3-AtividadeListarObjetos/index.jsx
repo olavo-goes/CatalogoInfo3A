@@ -16,7 +16,7 @@ export default function Home() {
          <h1>Produtos Loja:</h1>
          {listaProdutos.map((produto) => 
           <div key={produto.id}>
-          <p>{produto.nome}</p>
+          <p>{produto.produto}</p>
           <p>{produto.preco}</p>
           </div>)}
     </div>

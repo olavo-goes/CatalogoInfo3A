@@ -3,7 +3,7 @@
 // dentro desse `<div>`.
 
 import { useState } from "react";
-export default function home(){
+export default function Home(){
     const [listaProdutos, setProdutos] = useState([
         {id: 1, produto: "batata", preco: "10 R$" },
         {id: 2, produto: "banana", preco: "12 R$" },
@@ -21,16 +21,15 @@ export default function home(){
              <h1>Produtos Loja:</h1>
              {listaProdutos.map((produto) => 
               <div key={produto.id}>
-              <p>{produto.nome}</p>
+              <p>{produto.produto}</p>
               <p>{produto.preco}</p>
               <button onClick={ () => adicionarItemPedidos(produto)}>Selecionar</button>
               </div>)}
 
              {
                 listaPedidos.map((produto) => <div key={produto}>
-               <p>{produto.nome}</p>
+               <p>{produto.produto}</p>
                <p>{produto.preco}</p>
-               <button onClick={ () => adicionarItemPedidos(produto)}>Selecionar</button>
                 </div>)}
         </div>
     )

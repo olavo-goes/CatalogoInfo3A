@@ -37,9 +37,9 @@
 // No valor do `onClick`, chame a função `removerItemPedidos`.
 // Passe o identificador (`id`) do item como parâmetro para `removerItemPedidos`, o mesmo que você usa no `map`.
 // No conteúdo do botão, coloque o texto "Remover".
-
 import { useState } from "react";
-export default function home(){
+import Header from "./Components/Header"
+export default function Home(){
     const [listaProdutos, setProdutos] = useState([
         {id: 1, produto: "batata", preco: "10 R$" },
         {id: 2, produto: "banana", preco: "12 R$" },
@@ -51,17 +51,18 @@ export default function home(){
     const adicionarItemPedidos = (objeto) =>{
         setListaPedidos([...listaPedidos, objeto])
     }
-    
+
+
     const removerItemPedidos = (id) => {
-        let remover = false 
-        listaAux = listaPedidos.filter((produto) =>
+        let removerProduto = false 
+        let listaAux = listaPedidos.filter((produto) =>
         {   
-            if(remover == false){
+            if(removerProduto == false){
                 if(produto.id !== id){
                     return produto
                 }
                 else{
-                    remover == true 
+                    removerProduto = true 
                     return null
                 }
             }
@@ -71,7 +72,6 @@ export default function home(){
         })
         setListaPedidos(listaAux)
         }
-    
 
     return (
         <div>
@@ -79,15 +79,15 @@ export default function home(){
              {listaProdutos.map((produto) => 
               <div key={produto.id}>
               <p>{produto.nome}</p>
-              <p>{produto.preco}</p>
+              <p>{produto.produto}</p>
               <button onClick={ () => adicionarItemPedidos(produto)}>Selecionar</button>
               </div>)}
 
              {
                 listaPedidos.map((produto) => <div key={produto.id}>
               <p>{produto.nome}</p>
-              <p>{produto.preco}</p>
-              <button onClick={ () => adicionarItemPedidos(produto)}>Selecionar</button>
+              <p>{produto.produto}</p>
+              <button onClick={ () => removerItemPedidos(produto.id)}>Remover</button>
                 </div>)}
         </div>
     )

@@ -3,7 +3,7 @@
 // Lembre-se de importar o `useState` do módulo `react` para utilizar o estado.
 import { useState } from "react"
 
-export default function home (){
+export default function Home (){
     const [listaProdutos, setlistaProdutos] = useState ([
         {id: 1, produto: "batata", preco: "10 R$" },
         {id: 2, produto: "banana", preco: "12 R$" },
