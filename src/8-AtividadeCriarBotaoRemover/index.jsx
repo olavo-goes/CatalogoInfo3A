@@ -39,6 +39,8 @@
 // No conteúdo do botão, coloque o texto "Remover".
 import { useState } from "react";
 import Header from "./Components/Header"
+import Footer from "./Components/Footer";
+
 export default function Home(){
     const [listaProdutos, setProdutos] = useState([
         {id: 1, produto: "batata", preco: "10 R$" },
@@ -75,6 +77,7 @@ export default function Home(){
 
     return (
         <div>
+            <Header Title={"Title"}/>
              <h1>Produtos Loja:</h1>
              {listaProdutos.map((produto) => 
               <div key={produto.id}>
@@ -89,6 +92,7 @@ export default function Home(){
               <p>{produto.produto}</p>
               <button onClick={ () => removerItemPedidos(produto.id)}>Remover</button>
                 </div>)}
+                <Footer desenvolvedor={"Desenvolvedor"}/>
         </div>
     )
 }
